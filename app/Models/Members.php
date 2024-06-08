@@ -13,6 +13,6 @@ class Members extends Model
 
     public static function findByNiss($niss){
         //get slug collection or return fail
-        return Post::where('rijksregisternummer', 'like', $niss)->firstOrFail();
+        return Members::where('rijksregisternummer', 'like', $niss)->firstOrFail();
     }
 }
