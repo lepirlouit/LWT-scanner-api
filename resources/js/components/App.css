@@ -1,0 +1,46 @@
+/* No CSS Styles here */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(75px, auto);
+}
+.teamA {
+  grid-column: 1;
+  grid-row: 1;
+}
+.tempos {
+  grid-column: 3;
+  grid-row: 1;
+}
+.sportivos {
+  grid-column: 1;
+  grid-row: 2 ;
+}
+.cyclos {
+  grid-column: 2;
+  grid-row: 2;
+}
+.toeristen {
+  grid-column: 3;
+  grid-row: 2;
+}
+.dploug {
+  grid-column: 1;
+  grid-row: 3;
+}
+.trappers {
+  grid-column: 2;
+  grid-row: 3;
+}
+.moderatos {
+  grid-column: 3;
+  grid-row: 3;
+}
+.wrapper > .default{
+  border-color: red;
+}
+.valid {
+  margin-top: 10px;
+  right:0;
+}

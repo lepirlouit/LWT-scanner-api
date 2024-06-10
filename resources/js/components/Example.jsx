@@ -1,6 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from './App.tsx'
 
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+
+import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
+const defaultTheme = createTheme({
+    palette: {
+        primary: {
+            main: "#eb0029",
+        },
+        secondary: {
+            main: "#0000ff",
+        },
+    },
+});
+
+import { Box } from "@mui/material";
 function Example() {
     return (
         <div className="container">
@@ -19,12 +38,17 @@ function Example() {
 
 export default Example;
 
-if (document.getElementById('example')) {
+if (document.getElementById("example")) {
     const Index = ReactDOM.createRoot(document.getElementById("example"));
 
     Index.render(
         <React.StrictMode>
-            <Example/>
+            <ThemeProvider theme={defaultTheme}>
+                <Box sx={{ display: "flex" }}>
+                    {/* <Example /> */}
+                    <App />
+                </Box>
+            </ThemeProvider>
         </React.StrictMode>
-    )
+    );
 }
