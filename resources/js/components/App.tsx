@@ -7,11 +7,20 @@ import React, { useState } from "react";
 // Components
 import QrReader from "./QrReader";
 import { AppBar, Box, Button, Container, Grid, Paper, Toolbar, Typography } from "@mui/material";
+import GeoPosition from "./GeoPosition";
+
 
 function App() {
   const [openQr, setOpenQr] = useState<boolean>(true);
-  const [nissValue, setNissValue] = useState<string>(true);
+  const [nissValue, setNissValue] = useState<string>("");
+  const [userPosition, setUserPosition] = useState < {
+    latitude: number;
+    longitude: number;
+    accuracy: number;
+  }>();
   const defaultTeam = "Tempo's";
+
+
 
   return (
     <div>
@@ -53,6 +62,7 @@ function App() {
               {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                <GeoPosition />
                 {openQr && <>
         <input type="text" inputMode="numeric" pattern="\d*" placeholder="niss" 
           onChange={e => setNissValue(e.target.value)} />
