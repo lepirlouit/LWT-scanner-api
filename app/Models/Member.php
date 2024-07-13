@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Members extends Model
+class Member extends Model
 {
     use HasFactory;
     protected $table = 'ledenlijst';
@@ -13,6 +13,6 @@ class Members extends Model
 
     public static function findByNiss($niss){
         //get slug collection or return fail
-        return Members::where('rijksregisternummer', 'like', $niss)->firstOrFail();
+        return Member::where('rijksregisternummer', 'like', $niss)->firstOrFail();
     }
 }

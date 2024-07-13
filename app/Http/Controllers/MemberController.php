@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Members;
+use App\Models\Member;
 use App\Http\Resources\MemberResource;
 
 class MemberController extends Controller
 {
     public function getMember($niss)
     {
-        $member = Members::findByNiss($niss);
+        $member = Member::findByNiss($niss);
         if(!empty($member))
         {
             return response()-> json(new MemberResource($member));
