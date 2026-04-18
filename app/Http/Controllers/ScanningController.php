@@ -32,6 +32,7 @@ class ScanningController extends Controller
         $scanning->latitude = $request->latitude;
         $scanning->longitude = $request->longitude;
         $scanning->niss = $request->niss;
+        $scanning->team = $request->team;
         $scanning->moment = $request->moment;
         $scanning->ipAddress = $request->ip();
  
