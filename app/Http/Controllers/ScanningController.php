@@ -34,6 +34,7 @@ class ScanningController extends Controller
         $scanning->niss = $request->niss;
         $scanning->team = $request->team;
         $scanning->moment = $request->moment;
+        $scanning->scanditDeviceId = $request->scanditDeviceId;
         $scanning->ipAddress = $request->ip();
  
         $scanning->save();
